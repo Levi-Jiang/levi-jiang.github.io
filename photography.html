@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography — Levi Jiang</title>
+  <meta name="description" content="Photography by Levi Jiang." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Placeholder tiles so the gallery layout is visible before you add photos */
+    .ph { aspect-ratio: 3/4; background: linear-gradient(135deg, #e7e3db, #d8d2c7); border-radius: 4px; margin-bottom: 18px; break-inside: avoid; }
+    .ph:nth-child(2n){ aspect-ratio: 1/1; }
+    .ph:nth-child(3n){ aspect-ratio: 4/5; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">Levi Jiang</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="photography.html" class="active">Photography</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Photography</p>
+        <h1>Through the Lens</h1>
+        <p class="lead">A selection of photographs. Drop your images into the <code>assets/</code> folder and replace the placeholder tiles below.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery">
+          <!-- Replace each .ph placeholder with: <img src="assets/photo-1.jpg" alt="Caption" /> -->
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+          <div class="ph"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Levi Jiang. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

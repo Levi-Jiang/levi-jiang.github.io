@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multimedia — Levi Jiang</title>
+  <meta name="description" content="Multimedia and data visualization projects by Levi Jiang." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">Levi Jiang</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="multimedia.html" class="active">Multimedia</a></li>
+          <li><a href="photography.html">Photography</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Multimedia</p>
+        <h1>Data &amp; Visual Projects</h1>
+        <p class="lead">Interactive graphics, video, audio, and data visualizations. Replace these with embeds or links to your own projects.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="card-grid">
+          <article class="card">
+            <img class="card-thumb" src="assets/multimedia-1.jpg" alt="" onerror="this.style.display='none'" />
+            <div class="card-body">
+              <span class="card-meta">Interactive &middot; 2025</span>
+              <h3>Title of a data visualization project</h3>
+              <p>Describe the dataset, the tools you used, and what the reader learns.</p>
+              <a class="card-link" href="#">View project &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-thumb" src="assets/multimedia-2.jpg" alt="" onerror="this.style.display='none'" />
+            <div class="card-body">
+              <span class="card-meta">Video &middot; 2025</span>
+              <h3>A video or documentary piece</h3>
+              <p>Short description of the multimedia project. Link to YouTube, Vimeo, or an embed.</p>
+              <a class="card-link" href="#">Watch &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-thumb" src="assets/multimedia-3.jpg" alt="" onerror="this.style.display='none'" />
+            <div class="card-body">
+              <span class="card-meta">Podcast &middot; 2024</span>
+              <h3>An audio or podcast project</h3>
+              <p>Describe your audio work and link to the episode or series.</p>
+              <a class="card-link" href="#">Listen &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Levi Jiang. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
