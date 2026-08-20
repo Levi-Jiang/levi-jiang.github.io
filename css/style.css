@@ -71,12 +71,12 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
-.brand { font-family: var(--display); font-size: 1.5rem; letter-spacing: 0.06em; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 55px; }
+.brand { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.06em; }
 .nav-links { display: flex; gap: 44px; list-style: none; align-items: center; }
 .nav-links a {
   font-family: var(--sans);
-  font-size: 0.85rem; font-weight: 400;
+  font-size: 0.75rem; font-weight: 400;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--muted-dark); position: relative; padding: 8px 0;
   transition: color .2s ease;
@@ -94,7 +94,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   position: relative;
   min-height: calc(100vh - 84px);
   display: flex; align-items: center; justify-content: center;
-  padding: 20px 0;
+  padding: 0;
 }
 .hero-video {
   width: 100%;
@@ -114,7 +114,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 @keyframes bob { 0%,100%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(6px);} }
 
 /* ---------- Intro block (below the Hi) ---------- */
-.intro { padding: 40px 0 120px; text-align: center; }
+.intro { padding: 0px 0 120px; text-align: center; }
 .intro .im { font-family: var(--sans); font-size: 1.5rem; letter-spacing: 0.06em; color: var(--muted-dark); margin-bottom: 6px; }
 .intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0.03em; margin-bottom: 24px; }
 .intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
@@ -206,7 +206,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); padding: 72px 0 44px; }
 .footer-top { text-align: center; margin-bottom: 52px; }
-.footer-top .display { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: 0.02em; margin-bottom: 26px; }
+.footer-top .display { font-size: clamp(1.5rem, 3vw, 2.6rem); margin-bottom: 26px; }
 .footer-top a.mail { font-family: var(--sans); letter-spacing: 0.06em; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
 .socials { display: flex; gap: 16px; justify-content: center; margin-top: 30px; }
 .socials a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 50%; transition: all .2s ease; }
