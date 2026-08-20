@@ -26,29 +26,30 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero: the "Hi" video -->
     <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/hero.jpg">
+        <source src="assets/hero-1080p.mp4" type="video/mp4" />
+      </video>
+      <a href="#intro" class="scroll-cue" aria-label="Scroll down">Scroll</a>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro" id="intro">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-visual">
-            <img src="assets/hero.jpg" alt="Hi" />
-          </div>
-          <div class="hero-text">
-            <p class="im">I&rsquo;m</p>
-            <h1 class="display">Levi Jiang</h1>
-            <p class="role">Data Journalist, Graphics &amp; Interactive Designer</p>
+        <p class="im">I&rsquo;m</p>
+        <h1 class="display">Levi Jiang</h1>
+        <p class="role">Data Journalist, Graphics &amp; Interactive Designer</p>
 
-            <div class="hero-prev">
-              <p class="label">Previously</p>
-              <p>Data Journalism Fellow <strong>@Dow Jones</strong><br />
-                 Interactive News Designer &amp; Developer <strong>@The Philadelphia Inquirer</strong></p>
-            </div>
-
-            <p class="hero-welcome">You&rsquo;re always welcome to explore more about me and get in touch!</p>
-
-            <a href="projects.html" class="btn">See my work</a>
-          </div>
+        <div class="intro-prev">
+          <p class="label">Previously</p>
+          <p>Data Journalism Fellow <strong>@Dow Jones</strong><br />
+             Interactive News Designer &amp; Developer <strong>@The Philadelphia Inquirer</strong></p>
         </div>
+
+        <p class="intro-welcome">You&rsquo;re always welcome to explore more about me and get in touch!</p>
+
+        <a href="projects.html" class="btn">See my work</a>
       </div>
     </section>
 
