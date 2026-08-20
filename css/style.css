@@ -114,15 +114,22 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 @keyframes bob { 0%,100%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(6px);} }
 
 /* ---------- Intro block (below the Hi) ---------- */
-.intro { padding: 0px 0 120px; text-align: center; }
-.intro .im { font-family: var(--sans); font-size: 1.5rem; letter-spacing: 0.06em; color: var(--muted-dark); margin-bottom: 6px; }
+.intro { padding: 0px 0 120px; text-align: left; }
+/* Only the name + role stay centered; everything below reads left-aligned */
+.intro h1,
+.intro .role { text-align: center; }
 .intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0em; margin-bottom: 24px; }
+/* "I'm" sits small, inline, at the baseline of the big name */
+.intro .im { font-family: var(--sans); font-size: 0.26em; letter-spacing: 0.06em; color: var(--muted-dark); vertical-align: baseline; margin-right: 0.15em; }
 .intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
-.intro-prev { margin-bottom: 34px; }
-.intro-prev .label { font-family: var(--sans); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.74rem; color: var(--muted); margin-bottom: 12px; }
-.intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
-.intro-prev p strong { color: var(--ink); font-weight: 600; }
-.intro-welcome { color: var(--muted-dark); margin: 0 auto 38px; max-width: 520px; }
+.intro-prev { margin-bottom: 60px; margin-left: 150px; margin-right: 150px; }
+.intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.4rem; }
+/* "Previously:" is plain body text now, not an uppercase label */
+.intro-prev .label { font-family: var(--body); letter-spacing: normal; text-transform: none; font-size: 1.02rem; color: var(--muted-dark); margin-bottom: 6px; }
+.prev-list { list-style: disc; padding-left: 1.5em; margin: 0; }
+.prev-list li { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
+/* Resume button stays centered even though the text around it is left-aligned */
+.intro .btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
 
 /* ---------- Portrait reveal (fixed background scroll effect) ---------- */
 .portrait-reveal {
