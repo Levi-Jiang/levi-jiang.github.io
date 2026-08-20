@@ -89,18 +89,40 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 }
 .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--ink); line-height: 1; }
 
-/* ---------- Hero ---------- */
-.hero { padding: 90px 0 100px; }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-.hero-visual img { width: 100%; }
-.hero-text .im { font-family: var(--sans); font-size: 1.6rem; letter-spacing: 0.06em; color: var(--muted-dark); margin-bottom: 4px; }
-.hero-text h1 { font-family: var(--display); font-size: clamp(3.4rem, 7vw, 5.6rem); letter-spacing: 0.02em; margin-bottom: 26px; }
-.hero-text .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.3rem); letter-spacing: 0.04em; margin-bottom: 32px; }
-.hero-prev { margin-bottom: 32px; }
-.hero-prev .label { font-family: var(--sans); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; }
-.hero-prev p { color: var(--muted-dark); font-size: 1rem; line-height: 1.6; }
-.hero-prev p strong { color: var(--ink); font-weight: 600; }
-.hero-welcome { color: var(--muted-dark); margin-bottom: 34px; max-width: 460px; }
+/* ---------- Hero (full-width "Hi" video) ---------- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 84px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px 0;
+}
+.hero-video {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+  font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: bob 2s ease-in-out infinite;
+}
+.scroll-cue::after { content: ""; width: 1px; height: 34px; background: var(--muted); }
+@keyframes bob { 0%,100%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(6px);} }
+
+/* ---------- Intro block (below the Hi) ---------- */
+.intro { padding: 40px 0 120px; text-align: center; }
+.intro .im { font-family: var(--sans); font-size: 1.5rem; letter-spacing: 0.06em; color: var(--muted-dark); margin-bottom: 6px; }
+.intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0.03em; margin-bottom: 24px; }
+.intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
+.intro-prev { margin-bottom: 34px; }
+.intro-prev .label { font-family: var(--sans); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.74rem; color: var(--muted); margin-bottom: 12px; }
+.intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
+.intro-prev p strong { color: var(--ink); font-weight: 600; }
+.intro-welcome { color: var(--muted-dark); margin: 0 auto 38px; max-width: 520px; }
 
 /* ---------- "What's More" ---------- */
 .whats-more {
@@ -194,8 +216,6 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 920px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { order: -1; max-width: 420px; }
   .cats { grid-template-columns: 1fr; gap: 28px; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -212,7 +232,8 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 32px; }
   .nav-links a.active::after { display: none; }
-  .hero { padding: 48px 0 60px; }
+  .hero { min-height: 60vh; }
+  .intro { padding: 24px 0 80px; }
   .whats-more { padding: 90px 0; }
   .section { padding: 64px 0; }
   .project-grid { grid-template-columns: 1fr; }
