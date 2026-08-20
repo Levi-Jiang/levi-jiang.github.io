@@ -116,13 +116,33 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* ---------- Intro block (below the Hi) ---------- */
 .intro { padding: 0px 0 120px; text-align: center; }
 .intro .im { font-family: var(--sans); font-size: 1.5rem; letter-spacing: 0.06em; color: var(--muted-dark); margin-bottom: 6px; }
-.intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0.03em; margin-bottom: 24px; }
+.intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0em; margin-bottom: 24px; }
 .intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
 .intro-prev { margin-bottom: 34px; }
 .intro-prev .label { font-family: var(--sans); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.74rem; color: var(--muted); margin-bottom: 12px; }
 .intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
 .intro-prev p strong { color: var(--ink); font-weight: 600; }
 .intro-welcome { color: var(--muted-dark); margin: 0 auto 38px; max-width: 520px; }
+
+/* ---------- Portrait reveal (fixed background scroll effect) ---------- */
+.portrait-reveal {
+  height: 82vh;
+  min-height: 460px;
+  background-image: url("../assets/portrait.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;   /* image stays put; section "reveals" it while scrolling */
+}
+/* background-attachment:fixed is janky on most touch devices — fall back to a
+   plain cover image there so it still looks intentional */
+@media (max-width: 768px) {
+  .portrait-reveal {
+    background-attachment: scroll;
+    height: 56vh;
+    min-height: 340px;
+  }
+}
 
 /* ---------- "What's More" ---------- */
 .whats-more {
