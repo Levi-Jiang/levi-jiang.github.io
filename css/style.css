@@ -1,13 +1,13 @@
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f4f3f1;
-  --ink: #000000;
-  --muted: #8f8f8f;
-  --muted-dark: #575757;
-  --line: #e4e2dd;
+  --bg: #f0f0f0;        /* newsprint paper gray/
+  --bg-soft: #e2e3e4;   /* slightly deeper gray for contrasting sections */
+  --ink: #14140f;
+  --muted: #8b8c8d;
+  --muted-dark: #56575a;
+  --line: #d5d6d7;
   --maxw: 1180px;
   --display: "Aboreto", "Times New Roman", serif;
-  --sans: "Jost", "Futura", "Century Gothic", sans-serif;
+  --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -61,12 +61,12 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.9);
+  background: rgba(242,242,242,.85);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 55px; }
-.brand { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.06em; }
+.brand { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.06em; color: var(--ink); }
 .nav-links { display: flex; gap: 44px; list-style: none; align-items: center; }
 .nav-links a {
   font-family: var(--sans);
@@ -96,7 +96,12 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   aspect-ratio: 16 / 9;
   object-fit: contain;
   display: block;
-  background: #fff;
+  background: var(--bg);
+  /* video has a white background; multiply lets the paper-gray page show
+     through the white while keeping the black "Hi" — so it blends in */
+  mix-blend-mode: multiply;
+  /* desaturate so the hand/sphere match the black & white page */
+  filter: grayscale(100%);
 }
 .scroll-cue {
   position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
@@ -108,21 +113,19 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 @keyframes bob { 0%,100%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(6px);} }
 
 /* ---------- Intro block (below the Hi) ---------- */
-.intro { padding: 0px 0 120px; text-align: left; }
+.intro { padding: 0px 0 100px; text-align: left; }
 /* Only the name + role stay centered; everything below reads left-aligned */
 .intro h1,
 .intro .role { text-align: center; }
 .intro h1 { font-family: var(--display); font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: 0em; margin-bottom: 24px; }
 /* "I'm" sits small, inline, at the baseline of the big name */
 .intro .im { font-family: var(--sans); font-size: 0.26em; letter-spacing: 0.06em; color: var(--muted-dark); vertical-align: baseline; margin-right: 0.15em; }
-.intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
-.intro-prev { margin-bottom: 60px; margin-left: 150px; margin-right: 150px; }
-.intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.4rem; }
-/* "Previously:" is plain body text now, not an uppercase label */
+.intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 1.5vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
+.intro-prev { margin-bottom: 0px; margin-left: 150px; margin-right: 150px; }
+.intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.5rem; }
 .intro-prev .label { font-family: var(--body); letter-spacing: normal; text-transform: none; font-size: 1.02rem; color: var(--muted-dark); margin-bottom: 6px; }
 .prev-list { list-style: disc; padding-left: 1.5em; margin: 0; }
 .prev-list li { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
-/* Resume button stays centered even though the text around it is left-aligned */
 .intro .btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
 
 /* ---------- Portrait parallax (photo drifts slower than the page) ---------- */
@@ -168,11 +171,11 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-bottom: 64px; }
 .area { display: flex; flex-direction: column; align-items: center; }
 .area-img {
-  width: 210px; height: 210px;
+  width: 150px; height: 150px;
   border-radius: 50%;
   object-fit: cover;
   filter: grayscale(100%);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .area-title {
   font-family: var(--display);
@@ -253,15 +256,12 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 .about-list .org { color: var(--muted-dark); font-size: 0.95rem; }
 
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--line); padding: 72px 0 44px; }
-.footer-top { text-align: center; margin-bottom: 52px; }
-.footer-top .display { font-size: clamp(1.5rem, 3vw, 2.6rem); margin-bottom: 26px; }
-.footer-top a.mail { font-family: var(--sans); letter-spacing: 0.06em; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
-.socials { display: flex; gap: 16px; justify-content: center; margin-top: 30px; }
-.socials a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 50%; transition: all .2s ease; }
-.socials a:hover { background: var(--ink); border-color: var(--ink); color: #fff; transform: translateY(-2px); }
+.site-footer { background: var(--ink); color: #fff; padding: 44px 0 36px; text-align: center; }
+.socials { display: flex; gap: 16px; justify-content: center; }
+.socials a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: #fff; transition: all .2s ease; }
+.socials a:hover { background: #fff; border-color: #fff; color: var(--ink); transform: translateY(-2px); }
 .socials svg { width: 18px; height: 18px; }
-.footer-bottom { text-align: center; font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.06em; color: var(--muted); }
+.footer-bottom { margin-top: 22px; font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.06em; color: rgba(255,255,255,.5); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 920px) {
@@ -273,7 +273,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 @media (max-width: 640px) {
   .nav-toggle { display: block; }
   .nav-links {
-    position: absolute; top: 84px; left: 0; right: 0;
+    position: absolute; top: 55px; left: 0; right: 0;
     flex-direction: column; gap: 0; align-items: stretch;
     background: var(--bg); border-bottom: 1px solid var(--line);
     padding: 8px 0; display: none;
