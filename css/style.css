@@ -1,5 +1,5 @@
 :root {
-  --bg: #f0f0f0;        /* newsprint paper gray/
+  --bg: #efeff0;        /* newsprint paper gray/
   --bg-soft: #e2e3e4;   /* slightly deeper gray for contrasting sections */
   --ink: #14140f;
   --muted: #8b8c8d;
@@ -61,7 +61,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(242,242,242,.85);
+  background: rgba(237, 238, 240, 0.85);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -126,7 +126,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 .intro-prev .label { font-family: var(--body); letter-spacing: normal; text-transform: none; font-size: 1.02rem; color: var(--muted-dark); margin-bottom: 6px; }
 .prev-list { list-style: disc; padding-left: 1.5em; margin: 0; }
 .prev-list li { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; }
-.intro .btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+.intro .btn { display: flex; width: fit-content; margin: 48px auto 0; }
 
 /* ---------- Portrait parallax (photo drifts slower than the page) ---------- */
 .portrait-reveal {
@@ -155,18 +155,18 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 }
 
 /* ---------- Projects preview (three areas) ---------- */
-.whats-more {
-  padding: 120px 0;
+.projects-preview {
+  padding: 80px 0;
   background: var(--bg);
   text-align: center;
 }
-.whats-more .display {
+.projects-preview .display {
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1;
   letter-spacing: 0.04em;
-  margin-bottom: 18px;
+  margin-bottom: 60px;
 }
-.whats-more .lead { font-family: var(--sans); font-size: 1.15rem; letter-spacing: 0.01em; color: var(--ink); margin: 0 auto 68px; }
+.projects-preview .lead { font-family: var(--sans); font-size: 1.15rem; letter-spacing: 0.01em; color: var(--ink); margin: 0 auto 68px; }
 
 .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-bottom: 64px; }
 .area { display: flex; flex-direction: column; align-items: center; }
@@ -304,7 +304,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   .nav-links a.active::after { display: none; }
   .hero { min-height: 60vh; }
   .intro { padding: 24px 0 80px; }
-  .whats-more { padding: 90px 0; }
+  .projects-preview { padding: 90px 0; }
   .section { padding: 64px 0; }
   .project-grid { grid-template-columns: 1fr; }
   .project-overlay p { max-height: none; opacity: .95; }
