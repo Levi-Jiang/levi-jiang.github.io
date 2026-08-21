@@ -121,7 +121,9 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* "I'm" sits small, inline, at the baseline of the big name */
 .intro .im { font-family: var(--sans); font-size: 0.26em; letter-spacing: 0.06em; color: var(--muted-dark); vertical-align: baseline; margin-right: 0.15em; }
 .intro .role { font-family: var(--sans); font-size: clamp(1.05rem, 1.5vw, 1.35rem); letter-spacing: 0.04em; margin-bottom: 40px; }
-.intro-prev { margin-bottom: 0px; margin-left: 150px; margin-right: 150px; }
+/* Cap the width and center it — a comfortable column on desktop that shrinks
+   to fit any screen (no fixed side margins that break on mobile) */
+.intro-prev { max-width: 760px; margin: 0 auto; }
 .intro-prev p { color: var(--muted-dark); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.5rem; }
 .intro-prev .label { font-family: var(--body); letter-spacing: normal; text-transform: none; font-size: 1.02rem; color: var(--muted-dark); margin-bottom: 6px; }
 .prev-list { list-style: disc; padding-left: 1.5em; margin: 0; }
