@@ -8,25 +8,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Portrait parallax — the photo scrolls slower than the rest of the page so
-  // it appears to drift. Desktop only; mobile shows it static.
+  // Portrait parallax — the photo scrolls slower than the page. Offset maps
+  // directly to scroll position (no easing, so it never wobbles), updated once
+  // per frame via rAF and GPU-composited. Desktop only; mobile shows it static.
   var section = document.querySelector('.portrait-reveal');
   var bg = section && section.querySelector('.portrait-bg');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (bg && !reduce) {
+    var FACTOR = 0.8;   // drift strength: total travel = FACTOR × section height
     var ticking = false;
     var update = function () {
       ticking = false;
       if (window.innerWidth <= 768) { bg.style.transform = ''; return; } // static on mobile
       var rect = section.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      // 0 as the section enters from the bottom, 1 as it leaves the top
-      var p = (vh - rect.top) / (vh + rect.height);
+      var p = (vh - rect.top) / (vh + rect.height); // 0 entering bottom → 1 leaving top
       p = Math.max(0, Math.min(1, p));
-      // drift ±30% of the section height — a pronounced lag so the photo
-      // clearly scrolls slower than the rest of the page
-      var shift = (p - 0.5) * 0.90 * rect.height;
-      bg.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+      var shift = (p - 0.5) * FACTOR * rect.height;
+      bg.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0)';
     };
     var onScroll = function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }

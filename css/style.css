@@ -1,9 +1,3 @@
-/* ============================================================
-   Levi Jiang — portfolio
-   Minimal black & white rebuild of the Wix site
-   Fonts: Aboreto (display) + Jost (Futura-like) + Inter (body)
-   ============================================================ */
-
 :root {
   --bg: #ffffff;
   --bg-soft: #f4f3f1;
@@ -14,7 +8,7 @@
   --maxw: 1180px;
   --display: "Aboreto", "Times New Roman", serif;
   --sans: "Jost", "Futura", "Century Gothic", sans-serif;
-  --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -135,12 +129,12 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 .portrait-reveal {
   position: relative;
   overflow: hidden;
-  height: 90vh;
+  height: 91vh;
   min-height: 460px;
 }
 .portrait-bg {
   position: absolute;
-  inset: -30% 0;                 /* lots of headroom so the photo can drift far with no gaps */
+  inset: -10% 0;                 /* headroom so the JS drift never exposes a gap */
   background-image: url("../assets/Pics/portrait.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -157,19 +151,41 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
   .portrait-bg { transform: none !important; }
 }
 
-/* ---------- "What's More" ---------- */
+/* ---------- Projects preview (three areas) ---------- */
 .whats-more {
-  padding: 140px 0;
-  background: var(--bg-soft);
+  padding: 120px 0;
+  background: var(--bg);
   text-align: center;
 }
 .whats-more .display {
-  font-size: clamp(3.5rem, 12vw, 9rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
-  margin-bottom: 48px;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
 }
-.whats-more .lead { font-family: var(--sans); font-size: 1.15rem; letter-spacing: 0.02em; color: var(--muted-dark); max-width: 640px; margin: 0 auto 44px; line-height: 1.7; }
+.whats-more .lead { font-family: var(--sans); font-size: 1.15rem; letter-spacing: 0.01em; color: var(--ink); margin: 0 auto 68px; }
+
+.areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-bottom: 64px; }
+.area { display: flex; flex-direction: column; align-items: center; }
+.area-img {
+  width: 210px; height: 210px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  margin-bottom: 30px;
+}
+.area-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.area p { font-family: var(--sans); color: var(--ink); font-size: 1rem; line-height: 1.7; max-width: 300px; }
+
+@media (max-width: 768px) {
+  .areas { grid-template-columns: 1fr; gap: 56px; }
+}
 
 /* ---------- Generic page head ---------- */
 .page-head { padding: 96px 0 20px; text-align: center; }
