@@ -131,24 +131,30 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* Resume button stays centered even though the text around it is left-aligned */
 .intro .btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
 
-/* ---------- Portrait reveal (fixed background scroll effect) ---------- */
+/* ---------- Portrait parallax (photo drifts slower than the page) ---------- */
 .portrait-reveal {
-  height: 82vh;
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
   min-height: 460px;
-  background-image: url("../assets/portrait.jpg");
+}
+.portrait-bg {
+  position: absolute;
+  inset: -30% 0;                 /* lots of headroom so the photo can drift far with no gaps */
+  background-image: url("../assets/Pics/portrait.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;   /* image stays put; section "reveals" it while scrolling */
+  will-change: transform;
 }
-/* background-attachment:fixed is janky on most touch devices — fall back to a
-   plain cover image there so it still looks intentional */
+/* On mobile the photo just sits still (no parallax) */
 @media (max-width: 768px) {
-  .portrait-reveal {
-    background-attachment: scroll;
-    height: 56vh;
-    min-height: 340px;
-  }
+  .portrait-reveal { height: 56vh; min-height: 340px; }
+  .portrait-bg { inset: 0; transform: none !important; }
+}
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .portrait-bg { transform: none !important; }
 }
 
 /* ---------- "What's More" ---------- */

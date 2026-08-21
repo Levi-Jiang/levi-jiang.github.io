@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
   <header class="site-header">
@@ -54,8 +54,10 @@
       </div>
     </section>
 
-    <!-- Portrait: fixed "reveal" scroll effect (desktop only) -->
-    <section class="portrait-reveal" role="img" aria-label="Levi Jiang"></section>
+    <!-- Portrait: parallax — drifts slower than the page (desktop) -->
+    <section class="portrait-reveal" role="img" aria-label="Levi Jiang">
+      <div class="portrait-bg"></div>
+    </section>
 
     <!-- What's More -->
     <section class="whats-more">
@@ -85,6 +87,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
