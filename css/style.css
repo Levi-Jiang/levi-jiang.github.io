@@ -133,27 +133,20 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 /* ---------- Portrait parallax (photo drifts slower than the page) ---------- */
 .portrait-reveal {
   position: relative;
-  overflow: hidden;
   height: 91vh;
   min-height: 460px;
-}
-.portrait-bg {
-  position: absolute;
-  inset: -10% 0;                 /* headroom so the JS drift never exposes a gap */
   background-image: url("../assets/Pics/portrait.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  will-change: transform;
+  /* Simple parallax: the photo stays fixed to the viewport while the section
+     scrolls over it — GPU-smooth, no JavaScript, no jump */
+  background-attachment: fixed;
 }
-/* On mobile the photo just sits still (no parallax) */
+/* background-attachment:fixed is unreliable on touch devices, so there the
+   photo just scrolls normally as a plain cover image */
 @media (max-width: 768px) {
-  .portrait-reveal { height: 56vh; min-height: 340px; }
-  .portrait-bg { inset: 0; transform: none !important; }
-}
-/* Respect users who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  .portrait-bg { transform: none !important; }
+  .portrait-reveal { height: 56vh; min-height: 340px; background-attachment: scroll; }
 }
 
 /* ---------- Projects preview (three areas) ---------- */
