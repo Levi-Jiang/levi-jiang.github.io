@@ -198,11 +198,11 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
 .page-head .lead { font-family: var(--sans); color: var(--muted-dark); max-width: 640px; margin: 22px auto 0; letter-spacing: 0.02em; }
 
 /* ---------- Garden ---------- */
-.garden-list { max-width: 940px; margin: 0 auto; display: flex; flex-direction: column; }
+.project-list { max-width: 940px; margin: 0 auto; display: flex; flex-direction: column; }
 .projects-item { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: center; padding: 44px 0; border-top: 1px solid var(--line); }
 .projects-item:last-child { border-bottom: 1px solid var(--line); }
-.garden-thumb { display: block; overflow: hidden; border-radius: 2px; }
-.garden-thumb img {
+.project-thumb { display: block; overflow: hidden; border-radius: 2px; }
+.project-thumb img {
   width: 100%; aspect-ratio: 3 / 2; object-fit: cover;
   transition: filter .4s ease, transform .5s ease;
 }
@@ -210,11 +210,11 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; }
    reveal colour + zoom on hovering the picture or the headline. Touch devices
    have no hover, so they just show the images in full colour. */
 @media (hover: hover) {
-  .garden-thumb img { filter: grayscale(100%); }
-  .garden-thumb:hover img,
-  .projects-item:has(h3 a:hover) .garden-thumb img { filter: grayscale(0%); transform: scale(1.04); }
+  .project-thumb img { filter: grayscale(100%); }
+  .project-thumb:hover img,
+  .projects-item:has(h3 a:hover) .project-thumb img { filter: grayscale(0%); transform: scale(1.04); }
 }
-.garden-tag { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
+.project-tag { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
 .projects-item h3 { font-family: var(--body); font-weight: 600; font-size: clamp(1.3rem, 2.2vw, 1.6rem); line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 14px; }
 .projects-item h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .projects-item p { color: var(--muted-dark); font-size: 1rem; line-height: 1.7; }
